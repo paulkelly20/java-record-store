@@ -19,3 +19,7 @@ it("Record store has a name", function(){
 it("Record store has a location", function(){
   assert.strictEqual(recordStore.city, "Glasgow")
 });
+
+it("Record store has empty inventory at start", function(){
+  assert.strictEqual(recordStore.inventory.length, 0)
+});
