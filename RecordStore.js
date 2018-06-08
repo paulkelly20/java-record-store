@@ -11,4 +11,12 @@ RecordStore.prototype.buyRecordForInventory = function (record) {
   this.balance -= record.price;}
 };
 
+RecordStore.prototype.listAllRecordsSortingByArtist = function () {
+  var sortedRecords = this.inventory.sort(function (a, b) {
+  return ((a.artist < b.artist) ? -1 : ((a.artist > b.artist) ? 1 : 0));
+  });return sortedRecords;
+};
+
+
+
 module.exports = RecordStore;
