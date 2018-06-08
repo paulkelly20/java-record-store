@@ -23,3 +23,7 @@ it("Record store has a location", function(){
 it("Record store has empty inventory at start", function(){
   assert.strictEqual(recordStore.inventory.length, 0)
 });
+
+it("Record store has a balance", function(){
+  assert.strictEqual(recordStore.balance, 100)
+});
