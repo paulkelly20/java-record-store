@@ -27,3 +27,10 @@ it("Record store has empty inventory at start", function(){
 it("Record store has a balance", function(){
   assert.strictEqual(recordStore.balance, 100)
 });
+
+
+it("Record store buys record for inventory", function(){
+  recordStore.buyRecordForInventory(record1)
+  assert.strictEqual(recordStore.inventory.length, 1)
+  assert.strictEqual(recordStore.balance, 80)
+});
