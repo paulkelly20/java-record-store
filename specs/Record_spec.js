@@ -22,3 +22,8 @@ it("record has a genre", function(){
 it("record has a price", function(){
   assert.strictEqual(record.price, 20)
 });
+
+it("record has a price", function(){
+  let expected = "Artist:Blur\nTitle: Parklife\nGenre: Indie\nPrice: 20";
+  assert.strictEqual(record.recordsDetails(), expected)
+});
