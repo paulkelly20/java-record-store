@@ -54,9 +54,16 @@ it("Record store sells record", function(){
 });
 
 it("Record store sells record", function(){
-  recordStore.buyRecordForInventory(record1)
-  recordStore.buyRecordForInventory(record2)
-  recordStore.buyRecordForInventory(record3)
+  recordStore.buyRecordForInventory(record1);
+  recordStore.buyRecordForInventory(record2);
+  recordStore.buyRecordForInventory(record3);
   assert.strictEqual(recordStore.stockValue(), 35);
+});
 
+it("Record store finances", function(){
+  recordStore.buyRecordForInventory(record1);
+  recordStore.buyRecordForInventory(record2);
+  recordStore.buyRecordForInventory(record3);
+  recordStore.sell(record1);
+  assert.strictEqual(recordStore.finances(), 105);
 });

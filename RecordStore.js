@@ -30,9 +30,8 @@ RecordStore.prototype.stockValue = function () {
     }, 0);
 };
 
-
-// var sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {
-//   return accumulator + currentValue;
-// }, 0);
+RecordStore.prototype.finances = function () {
+  return finances = this.stockValue() + this.balance;
+};
 
 module.exports = RecordStore;
