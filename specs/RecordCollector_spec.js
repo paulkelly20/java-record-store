@@ -41,3 +41,11 @@ it("record collector cant afford record", function(){
   recordCollector.BuyRecordForCollection(record);
   assert.strictEqual(recordCollector.recordCollection.length, 0)
 });
+
+it("record collector gets total value of collection", function(){
+  recordCollector.BuyRecordForCollection(record1);
+  recordCollector.BuyRecordForCollection(record2);
+  recordCollector.BuyRecordForCollection(record3);
+  assert.strictEqual(recordCollector.valueOfCollection(), 35)
+
+})

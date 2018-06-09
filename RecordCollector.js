@@ -11,5 +11,11 @@ RecordCollector.prototype.BuyRecordForCollection = function (record) {
   };
 };
 
+RecordCollector.prototype.valueOfCollection = function () {
+  return valueOfCollection = this.recordCollection.reduce(function(accumulator, record){
+    return accumulator + record.price;
+  }, 0);
+};
+
 
 module.exports = RecordCollector;
