@@ -10,3 +10,7 @@ beforeEach(function(){
 it("record collector has a name", function(){
   assert.strictEqual(recordCollector.name, "Paul")
 });
+
+it("record collector has a wallet ", function(){
+  assert.strictEqual(recordCollector.wallet, 100)
+});
