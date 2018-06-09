@@ -17,6 +17,12 @@ RecordStore.prototype.listAllRecordsSortingByArtist = function () {
   });return sortedRecords;
 };
 
+RecordStore.prototype.sell = function (recordToSell) {
+  var indexOfRecord = this.inventory.findIndex(record => record === recordToSell);
+  this.inventory.splice(indexOfRecord, 1);
+  let sellPrice = recordToSell.price * 1.5;
+  this.balance += sellPrice;
+};
 
 
 module.exports = RecordStore;
