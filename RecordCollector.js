@@ -17,5 +17,12 @@ RecordCollector.prototype.valueOfCollection = function () {
   }, 0);
 };
 
+RecordCollector.prototype.valueOfCollectionByGenre = function (genre) {
+  return valueOfCollection = this.recordCollection.filter(record => record.genre === genre).reduce(function(accumulator, record){
+    return accumulator + record.price;
+  }, 0);
+};
+
+
 
 module.exports = RecordCollector;
