@@ -52,3 +52,11 @@ it("Record store sells record", function(){
   assert.strictEqual(recordStore.inventory.length, 2);
   assert.strictEqual(recordStore.balance, 80);
 });
+
+it("Record store sells record", function(){
+  recordStore.buyRecordForInventory(record1)
+  recordStore.buyRecordForInventory(record2)
+  recordStore.buyRecordForInventory(record3)
+  assert.strictEqual(recordStore.stockValue(), 35);
+
+});

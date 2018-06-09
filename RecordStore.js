@@ -24,5 +24,15 @@ RecordStore.prototype.sell = function (recordToSell) {
   this.balance += sellPrice;
 };
 
+RecordStore.prototype.stockValue = function () {
+    return  stockValue = this.inventory.reduce(function(accumulator, record){
+      return accumulator + record.price;
+    }, 0);
+};
+
+
+// var sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {
+//   return accumulator + currentValue;
+// }, 0);
 
 module.exports = RecordStore;
