@@ -64,3 +64,13 @@ it("record collector finds most valuable record", function(){
   recordCollector.BuyRecordForCollection(record3);
   assert.deepStrictEqual(recordCollector.findMostValuableRecord(), record)
 });
+
+it("record collector finds most valuable record", function(){
+  recordCollector.BuyRecordForCollection(record1);
+  let record = new Record("Gorillaz", "Humanz", "indie rap", 12)
+  recordCollector.BuyRecordForCollection(record);
+  recordCollector.BuyRecordForCollection(record2);
+  recordCollector.BuyRecordForCollection(record3);
+  asscendingRecords = [record1, record2, record, record3];
+  assert.deepStrictEqual(recordCollector.sortRecords("ascending"), asscendingRecords )
+});

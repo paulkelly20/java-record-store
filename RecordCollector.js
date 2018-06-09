@@ -26,5 +26,18 @@ RecordCollector.prototype.valueOfCollectionByGenre = function (genre) {
 RecordCollector.prototype.findMostValuableRecord = function () {
 return mvr  = this.recordCollection.reduce((a, b) => (a.price > b.price) ? a : b)};
 
+RecordCollector.prototype.sortRecords = function (sortOrder) {
+  if(sortOrder === "ascending"){
+    var sortedRecords = this.recordCollection.sort(function (a, b) {
+    return a.price - b.price;
+  });return sortedRecords;
+  };
+  if(sortOrder === "descending"){
+    var sortedRecords = this.recordCollection.sort(function (a, b) {
+    return b.price - a.price;
+  });;return sortedRecords;
+  };
+};
+
 
 module.exports = RecordCollector;
