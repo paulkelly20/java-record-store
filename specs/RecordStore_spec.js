@@ -1,17 +1,21 @@
 var assert = require('assert');
 var Record = require('../Record.js');
 var RecordStore = require('../RecordStore.js');
+var RecordCollector = require('../RecordCollector.js');
 
 var recordStore;
 var record1;
 var record2;
 var record3;
+var recordCollector
+
 
 beforeEach(function(){
   recordStore = new RecordStore("Record planet", "Glasgow", 100);
   record1 = new Record("Blur", "Parklife", "Indie", 10);
   record2 = new Record("Oasis", "Whats the story morning glory", "Indie rock", 10);
   record3 = new Record("Blur", "Modern life is rubbish", "Indie", 15);
+  recordCollector = new RecordCollector("Paul", 100);
 });
 
 it("Record store has a name", function(){
