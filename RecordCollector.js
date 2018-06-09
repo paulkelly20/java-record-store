@@ -39,5 +39,12 @@ RecordCollector.prototype.sortRecords = function (sortOrder) {
   };
 };
 
+RecordCollector.prototype.compareValueWithOtherRecordCollector = function (recordCollector) {
+    if(this.valueOfCollection() > recordCollector.valueOfCollection()){
+      return true;
+    }
+    return false;
+};
+
 
 module.exports = RecordCollector;

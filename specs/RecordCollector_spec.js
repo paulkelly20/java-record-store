@@ -85,3 +85,21 @@ it("record collector sorts by descending", function(){
   descendingRecords = [record3, record, record1, record2];
   assert.deepStrictEqual(recordCollector.sortRecords("descending"), descendingRecords )
 });
+
+it("record collector value of records is greater that other collector", function(){
+  recordCollector.BuyRecordForCollection(record1);
+  recordCollector.BuyRecordForCollection(record2);
+  recordCollector.BuyRecordForCollection(record3);
+  let recordCollector2 = new RecordCollector("Elaine", 1000);
+  let record = new Record("Gorillaz", "Humanz", "indie rap", 12);
+  recordCollector2.BuyRecordForCollection(record);
+  assert.strictEqual(recordCollector.compareValueWithOtherRecordCollector(recordCollector2), true )
+});
+
+it("record collector value of records is less that other collector", function(){
+  recordCollector.BuyRecordForCollection(record1);
+  let recordCollector2 = new RecordCollector("Elaine", 1000);
+  let record = new Record("Gorillaz", "Humanz", "indie rap", 12);
+  recordCollector2.BuyRecordForCollection(record);
+  assert.strictEqual(recordCollector.compareValueWithOtherRecordCollector(recordCollector2), false )
+});
