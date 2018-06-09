@@ -55,3 +55,12 @@ it("record collector gets total value of genre in collection", function(){
   recordCollector.BuyRecordForCollection(record3);
   assert.strictEqual(recordCollector.valueOfCollectionByGenre("Indie"), 25)
 });
+
+it("record collector finds most valuable record", function(){
+  recordCollector.BuyRecordForCollection(record1);
+  let record = new Record("Gorillaz", "Humanz", "indie rap", 25)
+  recordCollector.BuyRecordForCollection(record);
+  recordCollector.BuyRecordForCollection(record2);
+  recordCollector.BuyRecordForCollection(record3);
+  assert.deepStrictEqual(recordCollector.findMostValuableRecord(), record)
+});

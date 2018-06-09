@@ -23,6 +23,8 @@ RecordCollector.prototype.valueOfCollectionByGenre = function (genre) {
   }, 0);
 };
 
+RecordCollector.prototype.findMostValuableRecord = function () {
+return mvr  = this.recordCollection.reduce((a, b) => (a.price > b.price) ? a : b)};
 
 
 module.exports = RecordCollector;
