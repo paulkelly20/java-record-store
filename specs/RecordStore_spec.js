@@ -11,7 +11,7 @@ beforeEach(function(){
   recordStore = new RecordStore("Record planet", "Glasgow", 100);
   record1 = new Record("Blur", "Parklife", "Indie", 10);
   record2 = new Record("Oasis", "Whats the story morning glory", "Indie rock", 10);
-  record3 = new Record("Blur", "Modern life is rubbish", "Indie rock", 15);
+  record3 = new Record("Blur", "Modern life is rubbish", "Indie", 15);
 });
 
 it("Record store has a name", function(){
@@ -66,4 +66,11 @@ it("Record store finances", function(){
   recordStore.buyRecordForInventory(record3);
   recordStore.sell(record1);
   assert.strictEqual(recordStore.finances(), 105);
+});
+
+it("Record stores all indie albums", function(){
+  recordStore.buyRecordForInventory(record1);
+  recordStore.buyRecordForInventory(record2);
+  recordStore.buyRecordForInventory(record3);
+  assert.deepStrictEqual(recordStore.findByGenre("Indie"), [record1, record3]);
 });
