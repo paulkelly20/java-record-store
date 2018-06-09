@@ -14,3 +14,7 @@ it("record collector has a name", function(){
 it("record collector has a wallet ", function(){
   assert.strictEqual(recordCollector.wallet, 100)
 });
+
+it("record collector has empty collection", function(){
+  assert.strictEqual(recordCollector.recordCollection.length, 0)
+});
